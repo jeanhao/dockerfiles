@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 ENV CAFFE_ROOT=/opt/caffe
+ENV MY_TEST=mytest
 WORKDIR $CAFFE_ROOT
 
 RUN git clone -b ${CAFFE_VERSION} --depth 1 https://github.com/BVLC/caffe.git . && \
