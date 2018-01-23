@@ -32,5 +32,3 @@ RUN git clone --recursive https://github.com/dmlc/xgboost \
     && python setup.py install \
     && cd ../.. \
     && rm -rf xgboost
-
-ENV test=test

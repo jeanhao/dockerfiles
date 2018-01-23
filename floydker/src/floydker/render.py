@@ -180,4 +180,4 @@ def render_for_debug(search_root, project):
 
 
 if __name__ == '__main__':
-    render_for_debug(os.path.join("..", "..", ".."), "dl-base")
+    render_for_debug(os.path.join("..", "..", ".."), "pytorch")
