@@ -56,7 +56,7 @@ else
     # login docker
     echo "try to login to aliyun docker hub...."
     echo "--username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}"
-    docker login --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
+    docker login -e ${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
     echo "login ret: $?"
 
     while read -r line; do
