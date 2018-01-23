@@ -1,4 +1,4 @@
-FROM floydhub/java-base:8
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/java-base:8
 
 RUN apt-get install -y \
       unzip \

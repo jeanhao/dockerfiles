@@ -1,4 +1,4 @@
-FROM floydhub/spacy:latest
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/spacy:latest
 MAINTAINER Floyd Labs "support@floydhub.com"
 
 RUN python -m spacy.en.download

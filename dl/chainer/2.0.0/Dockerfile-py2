@@ -1,7 +1,6 @@
-FROM floydhub/dl-base:1.0.0-py2.6
-MAINTAINER Floyd Labs "support@floydhub.com"
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-base:1.0.0-py2.6
+MAINTAINER RussellCloud Labs
 
 ARG CHAINER_VERSION=2.0.0
-ENV MY_TEST=mytest
 
 RUN pip --no-cache-dir install --upgrade chainer==${CHAINER_VERSION}

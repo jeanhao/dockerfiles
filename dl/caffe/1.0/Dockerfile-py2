@@ -1,5 +1,5 @@
-FROM floydhub/dl-base:1.0.0-py2
-MAINTAINER Floyd Labs "support@floydhub.com"
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-base:1.0.0-py2.6
+MAINTAINER RussellCloud Labs
 
 ARG CAFFE_VERSION=1.0
 
@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 ENV CAFFE_ROOT=/opt/caffe
-ENV MY_TEST=mytest
 WORKDIR $CAFFE_ROOT
 
 RUN git clone -b ${CAFFE_VERSION} --depth 1 https://github.com/BVLC/caffe.git . && \

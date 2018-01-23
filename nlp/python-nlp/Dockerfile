@@ -1,4 +1,4 @@
-FROM floydhub/python-base:latest
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/python-base:latest
 MAINTAINER Floyd Labs "support@floydhub.com"
 
 # SpaCy

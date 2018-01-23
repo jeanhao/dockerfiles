@@ -46,7 +46,7 @@ Just add a `_test` key under your target configuration. For example:
   _template: pytorch-0.x.x.jinja
   py2:
     arch: cpu
-    baseimg: floydhub/dl-base:latest-py2
+    baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-base:latest-py2
     cpver: cp27-none
     _test: tests/py2_test.sh
 ```

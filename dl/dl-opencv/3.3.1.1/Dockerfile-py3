@@ -1,5 +1,5 @@
-FROM floydhub/dl-python:2.0.0-py3.12
-MAINTAINER Floyd Labs "support@floydhub.com"
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-python:2.0.0-py3
+MAINTAINER RussellCloud Labs
 
 ARG OPENCV_VERSION=3.3.1
 

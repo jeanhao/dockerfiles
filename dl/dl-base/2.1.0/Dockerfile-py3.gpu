@@ -1,5 +1,5 @@
-FROM floydhub/dl-opencv:3.2.0.1-gpu-py3.12
-MAINTAINER Floyd Labs "support@floydhub.com"
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-gpu-py3.12
+MAINTAINER RussellCloud Labs
 
 # graphviz for visualization
 RUN apt-get update && apt-get install -y \

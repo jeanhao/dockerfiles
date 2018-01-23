@@ -1,5 +1,5 @@
-FROM floydhub/dl-base:1.0.0-gpu-py3
-MAINTAINER Floyd Labs "support@floydhub.com"
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-base:1.0.0-gpu-py3.6
+MAINTAINER RussellCloud Labs
 
 # Install kur
 RUN pip --no-cache-dir install --ignore-installed kur==0.6.0

@@ -1,4 +1,4 @@
-FROM floydhub/dl-deps:1.0.0-py3
+FROM registry.cn-shanghai.aliyuncs.com/russell-hub/dl-deps:1.0.0-py3
 MAINTAINER Floyd Labs "support@floydhub.com"
 
 RUN pip --no-cache-dir install \

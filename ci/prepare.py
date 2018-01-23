@@ -1,6 +1,5 @@
 from __future__ import print_function
 
-
 import hashlib
 import sys
 import requests
@@ -20,7 +19,7 @@ def find_changed_dockerfiles():
     """
     # STEP 1: find out the git compare string
     build_num = os.environ.get('CIRCLE_BUILD_NUM')
-    info_api = 'https://circleci.com/api/v1.1/project/github/%s/%s/%s' % (
+    info_api = 'https://circleci.com/api/v1.1/project/github/%s/%s/%s?circle-token=54cac265222dd8dcb2cc786a4cf375076cb71fe3' % (
         os.environ.get('CIRCLE_PROJECT_USERNAME'),
         os.environ.get('CIRCLE_PROJECT_REPONAME'),
         build_num
