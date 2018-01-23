@@ -47,17 +47,16 @@ keepalive() {
 
 jobfiles=$(find ./ci/jobs -name "*.job" | sort | awk "NR % ${CIRCLE_NODE_TOTAL} == ${CIRCLE_NODE_INDEX}")
 
+# login docker
+echo "try to login to aliyun docker hub...."
+echo "--username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}"
+docker login -e ${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
+echo "login ret: $?"
 if [ -z "${jobfiles}" ]; then
     echo "[*] More parallelism than tests"
 else
     keepalive &
     ALIVEPID=$!
-
-    # login docker
-    echo "try to login to aliyun docker hub...."
-    echo "--username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}"
-    docker login -e ${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
-    echo "login ret: $?"
 
     while read -r line; do
         echo "[*] Node ${CIRCLE_NODE_INDEX} running job ${line}..."
