@@ -1,19 +1,19 @@
 1.0.0:
   _test: tests/run.sh
   _template: dl-base-1.x.x.jinja
-  py2:
+  py2.6:
     cpver: py2
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-py2.6
-  py2.gpu:
+  py2.6.gpu:
     cpver: py2
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-gpu-py2.6
-  py3:
+  py3.6:
     cpver: py3
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-py3.6
-  py3.gpu:
+  py3.6.gpu:
     cpver: py3
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-gpu-py3.6
@@ -23,11 +23,11 @@
 1.1.0:
   _test: tests/run.sh
   _template: dl-base-1.x.x.jinja
-  py2.gpu:
+  py2.9.gpu:
     cpver: py2
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-gpu-py2.9
-  py3.gpu:
+  py3.9.gpu:
     cpver: py3
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0-gpu-py3.9
@@ -36,43 +36,59 @@
 2.0.0: &2_x_x
   _test: tests/run.sh
   _template: dl-base-1.x.x.jinja
-  py2:
+  py2.12:
     cpver: py2
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-py2.12
-  py3:
+  py3.12:
     cpver: py3
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-py3.12
-  py2.gpu:
+  py2.12.gpu:
     cpver: py2
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-gpu-py2.12
-  py3.gpu:
+  py3.12.gpu:
     cpver: py3
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-gpu-py3.12
 
 2.1.0:
-  - <<: *2_x_x
-    _template: dl-base-2.x.x.jinja
+  _test: tests/run.sh
+  _template: dl-base-2.x.x.jinja
+  py2.13:
+    cpver: py2
+    arch: cpu
+    baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-py2.12
+  py3.13:
+    cpver: py3
+    arch: cpu
+    baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-py3.12
+  py2.13.gpu:
+    cpver: py2
+    arch: gpu
+    baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-gpu-py2.12
+  py3.13.gpu:
+    cpver: py3
+    arch: gpu
+    baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.2.0.1-gpu-py3.12
 
 3.0.0:
   _test: tests/run.sh
   _template: dl-base-2.x.x.jinja
-  py2:
+  py2.16:
     cpver: py2
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.3.1.1-py2.16
-  py3:
+  py3.16:
     cpver: py3
     arch: cpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.3.1.1-py3.16
-  py2.gpu:
+  py2.16.gpu:
     cpver: py2
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.3.1.1-gpu-py2.16
-  py3.gpu:
+  py3.16.gpu:
     cpver: py3
     arch: gpu
     baseimg: registry.cn-shanghai.aliyuncs.com/russell-hub/dl-opencv:3.3.1.1-gpu-py3.16

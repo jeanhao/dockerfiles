@@ -10,7 +10,7 @@ import os
 import click_log
 import logging
 
-from .utils import gen_target_cfg_items, gen_target_env_cfg
+from floydker.utils import gen_target_cfg_items, gen_target_env_cfg
 
 logger = logging.getLogger(__name__)
 click_log.basic_config(logger)
@@ -154,3 +154,30 @@ def render(search_root, project):
         if project and os.path.basename(maxtrix_dir) != project:
             continue
         render_matrix(jinja2_env, maxtrix_dir)
+
+
+def render_for_debug(search_root, project):
+    template_paths = []
+    matrix_dirs = []
+
+    # traverse filesystem once and find out all matrix.yml and templates
+    for cur_dir, dirs, files in os.walk(search_root):
+        # TODO: hornor .gitignore
+        for f in files:
+            if f == 'matrix.yml':
+                logger.info('Found matrix in %s', cur_dir)
+                matrix_dirs.append(cur_dir)
+            elif f.endswith('.jinja'):
+                template_paths.append(os.path.join(cur_dir, f))
+
+    # register templates with jinja environment
+    jinja2_env = jinja2.Environment(loader=FilesLoader(template_paths))
+
+    for maxtrix_dir in matrix_dirs:
+        if project and os.path.basename(maxtrix_dir) != project:
+            continue
+        render_matrix(jinja2_env, maxtrix_dir)
+
+
+if __name__ == '__main__':
+    render_for_debug(os.path.join("..", "..", ".."), "dl-base")
