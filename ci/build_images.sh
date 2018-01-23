@@ -53,6 +53,10 @@ else
     keepalive &
     ALIVEPID=$!
 
+    # login docker
+    echo "try to login to aliyun docker hub...."
+    docker login --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
+
     while read -r line; do
         echo "[*] Node ${CIRCLE_NODE_INDEX} running job ${line}..."
         dockerfile=$(cat "${line}")
