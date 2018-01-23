@@ -50,7 +50,7 @@ jobfiles=$(find ./ci/jobs -name "*.job" | sort | awk "NR % ${CIRCLE_NODE_TOTAL} 
 # login docker
 echo "try to login to aliyun docker hub...."
 echo "--username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}"
-docker login -e ${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
+docker login --username=${DOCKER_USERNAME} -e ${DOCKER_USERNAME} --password=${DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
 echo "login ret: $?"
 if [ -z "${jobfiles}" ]; then
     echo "[*] More parallelism than tests"
